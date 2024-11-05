@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./imagens/livros.gif" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Portifólio de Projetos</title>
+</head>
+<body>
+    <head>
+        <h1>Conjunto de dados sobre Obesidade</h1>
+        <img src="./fotos/fast_food.png" class="img-obesidade">
+        <p class="p-obesidade">A <strong>obesidade</strong> é uma doença grave e crônica com interações genéticas e ambientais. É definida como uma
+            quantidade excessiva de tecido adiposo no corpo que é prejudicial à saúde.</p>
+        <p class="p-obesidade"> Os principais fatores de risco
+            para obesidade incluem hábitos sociais, psicológicos e alimentares. A obesidade é um problema de saúde
+            significativo para todas as faixas etárias no mundo.</p>
+        <p class="p-obesidade">Atualmente, mais de 2 bilhões de pessoas em todo o
+            mundo são obesas ou estão acima do peso. Pesquisas mostram que a <strong>obesidade pode ser prevenida</strong>.</p>
+        <p class="p-obesidade">Neste estudo, uma pesquisa foi conduzida em 1610 indivíduos para criar o conjunto de dados de obesidade. Para analisar
+            os dados da pesquisa, foi utilizado conceitos fundamentais de <strong>estatística</strong> e <strong>ciência de dados</strong>.</p>
+    </head>
+    <main>
+        <section>
+            <h2>Criação do banco de dados</h2>
+        
+            <pre><code>
+                <span class="comment">-- MySQL Workbench Synchronization</span>
+                <span class="comment">-- Generated: 2024-11-04 23:38</span>
+                <span class="comment">-- Model: New Model</span>
+                <span class="comment">-- Version: 1.0</span>
+                <span class="comment">-- Project: Name of the project</span>
+                <span class="comment">-- Author: Ana</span>
+                
+                <span class="keyword">SET</span> @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+                <span class="keyword">SET</span> @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+                <span class="keyword">SET</span> @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+                
+                <span class="keyword">CREATE SCHEMA</span> <span class="keyword">IF NOT EXISTS</span> `bancoobesidade` <span class="keyword">DEFAULT CHARACTER SET</span> utf8 ;
+                
+                <span class="keyword">CREATE TABLE</span> <span class="keyword">IF NOT EXISTS</span> `bancoobesidade`.`obesidade` (
+                  `sex` <span class="number">INT(11)</span> <span class="keyword">NOT NULL</span>,
+                  `age` <span class="number">INT(11)</span> <span class="keyword">NOT NULL</span>,
+                  `height` <span class="number">INT(11)</span> <span class="keyword">NOT NULL</span>,
+                  `overweight_obese_family` <span class="number">INT(11)</span> <span class="keyword">NOT NULL</span>,
+                  `consumption_of_fast_food` <span class="number">INT(11)</span> <span class="keyword">NOT NULL</span>,
+                  `consuming_vegetables` <span class="number">INT(11)</span> <span class="keyword">NOT NULL</span>,
+                  `number_of_main_meals_daily` <span class="number">INT(11)</span> <span class="keyword">NOT NULL</span>,
+                  `food_intake_between_meals` <span class="number">INT(11)</span> <span class="keyword">NOT NULL</span>,
+                  `smoking` <span class="number">INT(11)</span> <span class="keyword">NOT NULL</span>,
+                  `liquid_intake_daily` <span class="number">INT(11)</span> <span class="keyword">NOT NULL</span>,
+                  `calculation_of_calorie_intake` <span class="number">INT(11)</span> <span class="keyword">NOT NULL</span>,
+                  `physical_excercise` <span class="number">INT(11)</span> <span class="keyword">NOT NULL</span>,
+                  `schedule_dedicated_to_technology` <span class="number">INT(11)</span> <span class="keyword">NOT NULL</span>,
+                  `type_of_transportation_used` <span class="number">INT(11)</span> <span class="keyword">NOT NULL</span>,
+                  `class` <span class="number">INT(11)</span> <span class="keyword">NOT NULL</span>)
+                <span class="keyword">ENGINE</span> = InnoDB
+                <span class="keyword">DEFAULT CHARACTER SET</span> = utf8;
+                
+                <span class="keyword">SET</span> SQL_MODE=@OLD_SQL_MODE;
+                <span class="keyword">SET</span> FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+                <span class="keyword">SET</span> UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+                </code></pre>
+                
+        </section>
+    </main>
+</body>
+</html>
