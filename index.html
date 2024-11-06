@@ -126,11 +126,39 @@
                 ORDER BY type_of_transportation_used;
                     </code>
                 </pre>
-        <p>O gráfico abaixo mostra a relação entre os meios de transporte mais utilizados por pessoas com obesidade.</p>
-        <canvas id="myChart" width="300" height="100"></canvas>
+            <p>O gráfico abaixo mostra a relação entre os meios de transporte mais utilizados por pessoas com obesidade.
+            </p>
+            <canvas id="myChart" width="400" height="200"></canvas>
+
+            <h3>Validações</h3>
+            <p>A seguir, apresento algumas validações da query. Esse procedimento é realizado para assegurar a precisão
+                e a confiabilidade dos dados.</p>
+            <pre><code>
+            SELECT count(*) as count_type_class, type_of_transportation_used, class
+            FROM bancoobesidade.obesidade
+            WHERE type_of_transportation_used=1
+            AND class=4;</code></pre>
+            <p>Por meio dessa query, consegui realizar uma validação detalhada que confirmou a precisão e a consistência
+                dos dados apresentados. Esse processo garantiu que os resultados estivessem de acordo com as
+                expectativas e fossem confiáveis para uso em análises futuras.</p>
+        </section>
+        <section class="s">
+            <h3>Perfis com fatores de risco que contribuem para o agravamento da obesidade</h3>
+            <p>A query a seguir identifica os perfis que possuem as características mais agravantes da obesidade.
+                Portanto, foi consultado e analisado fatores de risco conhecidos (como idade,
+                histórico familiar, hábitos de vida).</p>
+            <pre><code>SELECT count(*)
+                FROM bancoobesidade.obesidade
+                WHERE smoking = 1
+                  AND overweight_obese_family = 1
+                  AND physical_excercise <=2
+                  AND consumption_of_fast_food = 1
+                  AND consuming_vegetables = 1
+                ORDER BY age DESC;</code></pre>
+            <canvas id="myChart2" width="100" height="100"></canvas>
         </section>
     </main>
-    
+
     <script>
         const ctx = document.getElementById('myChart').getContext('2d');
         const myChart = new Chart(ctx, {
@@ -146,6 +174,22 @@
                 }]
             }
         });
+        
+        const ctx2 = document.getElementById('myChart2').getContext('2d');
+        const myChart2 = new Chart(ctx2, {
+            type: 'pie', // Tipo de gráfico (pode ser 'line', 'pie', etc.)
+            data: {
+                labels: ['Carro', 'Motocicleta', 'Bicicleta', 'Transporte Público', "Caminhando"],
+                datasets: [{
+                    label: 'Relação entre meio de transporte e obesidade',
+                    data: [176, 15, 2, 72, 22], // Substitua com os dados da query
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            }
+        });
     </script>
 </body>
+
 </html>
